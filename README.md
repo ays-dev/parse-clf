@@ -6,9 +6,8 @@ const log = `207.97.227.239 - - [10/Jul/2023:14:02:39 -0400] "GET /example/path 
 
 const parsed = parseCLF(log);
 
-console.log(parsed);
-//
-=>
+console.log(parsed);  //  =>  
+```
 {
   remote_addr: '207.97.227.239',
   remote_user: '-',
@@ -43,3 +42,4 @@ console.log(parsed);
     status_code: { status: 200, type: '2XX', message: 'OK' }
   }
 }
+```
