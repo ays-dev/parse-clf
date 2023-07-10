@@ -29,7 +29,7 @@ export default function parseCLF(logLine) {
     const match = regex.exec(logLine);
     const parsedUserAgent = parser.setUA(match.groups['user_agent']).getResult();
     const parsedIpAddress = geoip.lookup(match.groups['ip']);
-    const parsedStatusCode = HTTPStatusCode.getMessage(match.groups['status'], match.groups['method'])
+    const parsedStatusCode = HTTPStatusCode.getMessage(match.groups['status'], match.groups['http_version'])
     const statusCodeType = getStatusCodeType(match.groups['status']);
 
     const logObject = {
